@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>14.Class</title>
+</head>
+<body>
+    <script>
+        //类和对象
+         //类：具有相同的属性和方法的对象的集合
+        //对象：具体的实例化的
+        //建议首字母大写
+        /*function People(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        People.prototype.showName = function(){
+            console.log("我的名字是："+this.name);
+        };
+        var p1 = new People('zhangsan',18);
+        console.log(p1.name);
+        console.log(p1.age);
+        p1.showName();
+        console.log("--------");*/
+        
+
+        //基于原型的继承
+        /*function Coder(name,age){
+            People.call(this,name,age);
+        }
+        Coder.prototype = new People ();
+
+        var c1 = new Coder('lisi',20);
+        console.log(c1.name);
+        c1.showName();*/
+
+        /*
+        *  继承父类的属性
+        *  改变this指向 call
+        *  继承父类的方法
+        *  子类.prototype = new 父类();
+        * */
+
+
+        //ES里面Class
+        /*class People{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            showName(){
+                console.log("我的名字是："+this.name);
+            }
+        }
+        var p1 = new People('zhangsan',18);
+        console.log(p1.name);
+        p1.showName();
+        console.log("----------");*/
+
+        
+        //继承的关键字extends
+        /*
+        * 继承必须写super();
+        * 方法继承
+        *
+        * 子类自己的属性
+        * this.属性 = 属性
+        * 子类自己的方法直接写
+        * */
+        /*class Coder extends People{
+            constructor(name,age,company){
+                super(name,age);
+                this.company = company;
+            }
+            showCompany(){
+                console.log(`我的公司是：${this.company}`);
+            }
+            static foo(){//静态方法
+                console.log('我是静态方法');
+            }
+        }
+        let c1 = new Coder('lisi',20,'百度');
+        console.log(c1.name);
+        c1.showName();
+        c1.showCompany();
+        Coder.foo();*/
+        //static 静态方法
+        /*
+        * 对象.方法
+        * var now = new Date();
+        * now.getFullYear();
+        * var str = 'abc';
+        * str.indexOf();
+        * var arr = [];
+        * arr.push();
+        *
+        *
+        * Math.random();
+        * Math.floor();
+        * 静态方法
+        *
+        * */
+    </script>
+</body>
+</html>

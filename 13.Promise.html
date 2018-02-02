@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>13.Promise</title>
+</head>
+<body>
+    <ul id="product">
+
+    </ul>
+    <script src="jquery-1.11.2.js"></script>
+    <script>
+        //jQuery $.get()  $.post()
+        /*let $product = $('#product');
+        $.get('product-data.json',function(res){
+            console.log(res);
+            let list = res.productData;
+            for(let item of list){
+                let $li = $(`<li>${item.name}</li>`);
+                $product.append($li);
+            }
+        },'json');//{productData: Array(9)}
+
+        //Ajax原理
+        //1.创建对象
+        var xmlhttp;
+        if(window.XMLHttpRequest){
+            xmlhttp = new XMLHttpRequest();// code for IE7+, Firefox, Chrome, Opera, Safari
+        }
+        else{
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");// code for IE6, IE5
+        }
+        //2.向服务器发送请求
+        xmlhttp.open("GET","text1.txt",true);
+        xmlhttp.send();
+        //3.服务器响应
+        //首先判断状态
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+            }
+        }
+
+        xmlDoc = xmlhttp.responseXML;
+        txt = "";
+        x = xmlDoc.getElementsByTagName("ARTIST");
+        for (i = 0; i < x.length; i++) {
+            txt = txt + x[i].childNodes[0].nodeValue + "<br />";
+        }
+        document.getElementById("myDiv").innerHTML = txt;*/
+
+
+        /*//有三个Ajax请求，向后端发送三次
+        //等到三个Ajax请求都返回结果以后，再执行一些操作
+        //怎样保证三个Ajax全部完成？
+        let flag1 = 1;
+        let flag2 = 1;
+        let flag3 = 1;
+        $.get(url1,function(){
+            flag1 = 2;
+        });
+        $.get(url2,function(){
+            flag2 = 2;
+        });
+        $.get(url3,function(){
+            flag3 = 2;
+        });
+        setInterval(function(){
+            if(flag1 == 2 &&flag2 == 2 && flag3 == 2){
+               ...
+            }
+        },500);*/
+
+
+        //Promise解决
+        /*let p1 = new Promise((reslove,reject) => {
+            $.get('product-data.json',function(res){
+                console.log(res);
+                //如果成功，执行第一个参数的方法，失败执行第二个
+                if(res.productData.length>0){
+                    reslove(res.productData);//如果成功
+                }else{
+                    reject();
+                }
+            },'json');
+        });
+        //成功的话，进入到then的方法
+        p1.then((data)=>{
+            console.log(data);
+            console.log('成功');
+        }).catch(()=>{
+            console.log('失败');
+        });*/
+
+        /*let p1 = new Promise((reslove,reject) => {
+            setTimeout(() => {
+                console.log('p1');
+                reslove();
+            },1000);
+        });
+        let p2 = new Promise((reslove,reject) => {
+            setTimeout(() => {
+                console.log('p2');
+                reslove();
+            },2000);
+        });
+        let p3 = new Promise((reslove,reject) => {
+            setTimeout(() => {
+                console.log('p3');
+                reject();//三个请求中有一个失败就会失败
+            },3000);
+        });*/
+        //Promise.all()方法
+        /*Promise.all([p1,p2,p3]).then(() =>{
+            console.log("成功");
+        }).catch(()=>{
+            console.log("失败");
+        });*/
+
+        //Promise.race()方法
+        /*Promise.race([p1,p2,p3]).then(() =>{
+            console.log("成功");
+        }).catch(()=>{
+            console.log("失败");
+        });
+*/
+
+
+        /*
+        * 1.$.get()获取  $.post()发送
+        * 前台往后端获取一些数据 就用get 前台往后端发送一些数据 就用post
+        * form 表单用的就是post  因为是把表单的信息发送到后端去
+        *2.内容多少
+        * $.get()发送的会少一些 $.post()发送的会多一些
+        * $.get()在请求的头里面(header) $.post()在body里面
+        * 3.安全
+        * $.get() 方式是不安全的  在URL后面显示参数
+        * $.post() 方式是安全的
+        *4.产生缓存
+        * $.get() 方式会产生一些缓存，会快一些
+        * $.post() 方式不会产生缓存
+        * */
+
+        /*
+        * get的参数：
+        * 第一个参数：IP地址
+        * 第二个参数：前端往后端发送请求时，要带一个什么参数
+        * 第三个参数：后端给的回调函数，返回值在function里面
+        * 第四个参数：传的数据格式
+        * */
+
+        /*
+        * network 里面可以看请求
+        * 304错误指的是请求
+        * 404文件资源找不到
+        * 200指的是正常的
+        * promise并不能发送Ajax请求 但是它可以对Ajax进行一些管理
+        * */
+    </script>
+</body>
+</html>

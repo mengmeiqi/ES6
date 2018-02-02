@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>8.对象扩展</title>
+</head>
+<body>
+    <script>
+        /*let obj1 = {
+            name:'lisi',
+            age:18
+        };//new Object()*/
+
+        /*let name = 'zhangsan';
+        let age = 18;
+        let obj2 = {
+            name,
+            age
+        };
+        console.log(obj2);//{name: "zhangsan", age: 18}*/
+
+        /*let ls = 'lisi';
+        let obj3 = {
+            name:ls
+        };
+        console.log(obj3);//{name: "lisi"}*/
+
+        /*function fn(ls){
+            let setting = {
+                name:ls
+            };
+            console.log(setting.name);
+        }
+        fn('lisi');*/
+
+        //让属性的名用变量去表示
+        /*let n = 'name';
+        let obj3 = {
+            n:'lisi'
+        };
+        console.log(obj3);// 方法不行 {n:'lisi'}*/
+
+        /*let n = 'name';
+        let obj3 = {
+            [n]:'lisi'
+        };
+        console.log(obj3);//{name:'lisi'}*/
+
+        /*let n = 'name';
+        let age = 20;
+        let obj4 = {
+            age,
+            [n]:'lisi'
+        }
+        console.log(obj4);//{age:20,name:'lisi'}*/
+
+        /*let name = 'lisi';
+        let obj4 = {
+            name,
+            age:18,
+            coding:function(){
+                console.log('coding');
+            }
+        }
+        console.log(obj4.name);//lisi
+        obj4.coding();//coding*/
+
+        //去掉冒号':'和function  结果一样
+        /*let name = 'lisi';
+        let obj4 = {
+            name,
+            age:18,
+            coding(){//简写方式
+                console.log('coding');
+            }
+        }
+        console.log(obj4.name);//lisi
+        obj4.coding();//coding*/
+
+        //一个 = 赋值语句
+        /*console.log(4 == '4');//true
+        console.log(4 === '4');//false
+
+        console.log(+0 == -0);//true
+        console.log(+0 === -0);//true
+
+        console.log(NaN == NaN);//false
+        console.log(NaN === NaN);//false*/
+        //为什么NaN 和 NaN 不相等？
+        //因为得到NaN的方式有很多，所以不相等
+
+        /*console.log(Object.is(4,'4'));//false
+        console.log(Object.is(+0,-0));//false
+        console.log(Object.is(NaN,NaN));//true*/
+
+        /*let obj5 = {
+            name:'zhngsan',
+            age:18
+        };
+        let obj6 = {
+            name:'zhangsan',
+            age:18
+        };
+        console.log(obj5 == obj6);//false
+        console.log(obj5 === obj6);//false
+        console.log(Object.is(obj5,obj6));//false
+
+        let obj7 = obj5;
+        console.log(obj5 == obj7);//true
+        console.log(obj5 === obj7);//true
+        console.log(Object.is(obj5,obj7));//true
+
+        let obj8 = {
+            name:'lisi',
+            age:18
+        };
+        let obj9 = {
+            sex:'man'
+        };
+        let obj10 = {
+            school:'理工'
+        };
+        Object.assign(obj8,obj9,obj10);
+        console.log(obj8);//{name: "lisi", age: 18, sex: "man", school: "理工"}
+        console.log(obj9);//{sex: "man"}
+        console.log(obj10);//{school: "理工"}*/
+
+        /*let obj8 = {
+            name:'lisi',
+            age:18
+        };
+        let obj9 = {
+            sex:'man'
+        };
+        let obj10 = {
+            school:'理工',
+            brother:{
+                name:'liwu'
+            }
+        };
+        Object.assign(obj8,obj9,obj10);
+        obj10.brother.name = 'liliu';
+        console.log(obj8);
+        //{name: "lisi", age: 18, sex: "man", school: "理工", brother: {name:"liliu"}}
+        console.log(obj9);//{sex: "man"}
+        console.log(obj10);//{school: "理工", brother: {name:liliu}}*/
+
+        /*let obj11 = {
+            name:'lisi',
+            age:18,
+            brother:{
+                name:'liwu'
+            }
+        }；
+        console.log('age' in obj11);//true*/
+
+        //判断数组位置是否有值
+        /*let arr = [1,2,3,4,5,6];
+        console.log(2 in arr);//true
+        console.log(6 in arr);//false*/
+
+
+
+
+
+    </script>
+</body>
+</html>

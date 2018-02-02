@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>5.数值扩展</title>
+</head>
+<body>
+    <script>
+        /*let num1 = 5; //十进制=>二进制
+        console.log(num1.toString(2));//101
+
+        let num2 =  101;//二进制=>十进制
+        console.log(parseInt(num2,2));//5
+
+        let num3 = 0101;
+        console.log(parseInt(num3,2));//NaN*/
+
+        /*let num4 = 0B0101; //二进制 0B或0b
+        console.log(num4);//5
+
+        let num5 = 0O666;//八进制 0O或0o
+        console.log(num5);//438*/
+
+//        console.log(Number.isFinite(5));//true
+//        console.log(Number.isFinite('5'));//false
+//        console.log(Number.isFinite(undefined));//false
+//        console.log(Number.isFinite(null));//false
+//        console.log(Number.isFinite(NaN));//false
+//        console.log(Number.isFinite(5/0));//Infinity false
+//        console.log(Number.isFinite(NaN));//false
+
+        /*
+        * 产生NaN的情况
+        * ① 1 + undefined
+        * ② 1 - 'a'
+        * NaN == NaN //false
+        *NaN === NaN //false
+        * 因为产生NaN的情况太多了，所以认为NaN和NAN是不等的
+        * */
+
+//        console.log(Number.isNaN(NaN));
+
+        /*console.log(Number.isInteger(5));//true
+        console.log(Number.isInteger('5'));//false
+        console.log(Number.isInteger(undefined));//false*/
+
+        /*console.log(Number.parseFloat(5));
+        console.log(Number.parseInt(5.9));*/
+
+        /*console.log(Number.MAX_SAFE_INTEGER);//9007199254740991
+        console.log(Number.MIN_SAFE_INTEGER);//-9007199254740991*/
+
+        /*console.log(Number.isSafeInteger(5));//true
+        console.log(Number.isSafeInteger(Math.pow(2,53)));//false*/
+
+        /*console.log(Math.trunc(5.2));
+        console.log(Math.trunc(3.9));*/
+
+        /*console.log(Math.sign(8));//1
+        console.log(Math.sign(-5));//-1
+        console.log(Math.sign(0));//0*/
+
+
+    </script>
+</body>
+</html>

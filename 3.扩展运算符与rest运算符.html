@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>3.扩展运算符与rest运算符</title>
+</head>
+<body>
+    <div>11</div>
+    <div>22</div>
+    <div>33</div>
+    <script>
+        /*function foo(){
+            console.log(arguments[0],arguments[1]);
+        }
+        foo(5,6);//5,6*/
+
+        /*function foo(...arg){
+            console.log(arg);
+        }
+        foo(5,6,7,8);*/
+
+        /*let arr1 = [1,2];
+        let arr2 = [3,...arr1,4];
+        console.log(arr2);//3 1 2 4*/
+
+        /*let arr1 = [1,2,3,4];
+        let arr2 = arr1;
+        arr1.push(5);
+        console.log(arr2);//1,2,3,4,5*/
+
+        /*let arr1 = [1,2,3,4];
+        let arr2 = [...arr1];
+        arr1.push(5);
+        console.log(arr2);//1,2,3,4*/
+
+        /*let arr1 = [1,2,3,4];
+        let arr2 = [5,6,7,8];
+        let arr3 = [...arr1,...arr2];
+        console.log(arr3);//1,2,3,4,5,6,7,8*/
+
+        /*function foo(...arg){
+            console.log(arg);
+        }*/
+
+        /*let obj1 = {
+            name :'zhangsan',
+            age:18
+        };
+        let obj2 = {
+            name:'lisi',
+            age:20
+        };*/
+
+//        foo(obj1,obj2);
+
+        /*let obj3 = {...obj1,...obj2};
+        console.log(obj3); //lisi 20*/
+
+//        console.log(Object.assign(obj1,obj2));
+
+        let aDiv = document.querySelectorAll("div");
+        console.log(aDiv.constructor); //类数组  NodeList
+
+        /*let arr = [];
+        let [div1,div2,div3] = [...aDiv];
+        for(let i=0;i<aDiv.length;i++){
+            arr.push(aDiv[i]);
+        }
+        arr.push(123);
+        console.log(arr);//div,div,div,123*/
+
+        /*let arr = [...aDiv];
+        arr.push(123);
+        console.log(arr);//div,div,div,123*/
+
+        /*let [div1,div2,div3] = [...aDiv];
+        console.log(div1,div2,div3);*/
+
+        /*function foo(a,b,...arg){
+            console.log(a);//1
+            console.log(b);//2
+            console.log(arg);//3,4,5,6
+        }
+        foo(1,2,3,4,5,6);*/
+
+        /*function foo(a,...arg,b){
+            console.log(a);
+            console.log(...arg);
+            console.log(b);
+        }
+        foo(1,2,3,4,5,6);*/
+
+
+
+    </script>
+</body>
+</html>
+          　

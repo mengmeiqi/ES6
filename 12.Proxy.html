@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*var pro = new Proxy({
+            name:'lisi',
+            age:18
+        },{
+            //get是获得值之前做的事
+            get:(target,key,property) => {
+                console.log('get');
+                return target[key];
+            },
+            //set是改变值的时候做的事，一定要有return 否则值不会被改变
+            set:(target,key,value,receiver) => {
+                console.log(`setting ${key} = ${value}`);
+                return target[key] = value;
+            }
+        });
+        pro.name = 'zhangsan';
+        console.log(pro.name);
+        //setting name = 'zhangsan'
+        //get
+        //zhangsan*/
+
+        let target = function() {
+            return 'target';
+        };
+        let handler = {
+            apply(target,ctx,args){
+                console.log('do apply');
+                //固定写法
+                return Reflect.apply(...arguments);//...扩展运算符
+            }
+        };
+        let pro = new Proxy(target,handler) ;
+        console.log(pro());
+        //do apply
+        //target
+
+    </script>
+</body>
+</html>
